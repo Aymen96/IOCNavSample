@@ -1,0 +1,53 @@
+$width: 160px;
+$height: 80px;
+
+$bg-room: #B1C1C9;
+
+$color-border-room: #6D8D9F;
+$width-border-room: 4px;
+
+
+$height-door: 30%;
+$width-door: 30%;
+.room {
+  width: $width;
+  height: $height;
+  position:relative;
+  border-radius: 4px;
+  border: $width-border-room solid $color-border-room;
+  background-color: $bg-room;
+  z-index: 99;
+  text-align: center;
+  & .door {
+    position:absolute;
+    background: white;
+    z-index: 100;
+    &.vertical {
+      top: calc(50% - (#{$height-door} / 2));
+      height: $height-door;
+      width: $width-border-room;
+      &.right {
+        right: -#{$width-border-room};
+      }
+      &.left {
+        left: -$width-border-room;
+      }
+    }
+    &.horizontal {
+      left: calc(50% - (#{$width-door} / 2));
+      width: $width-door;
+      height: $width-border-room;
+      &.top {
+        top: -$width-border-room;
+      }
+      &.down {
+        bottom: -#{$width-border-room};
+      }
+    }
+  }
+
+  & .name {
+    display:block;
+    font-weight: 900;
+  }
+}

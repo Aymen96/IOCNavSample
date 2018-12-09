@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {xunit, yunit} from '../constants';
 
 @Component({
   selector: 'app-room',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomComponent implements OnInit {
 
-  constructor() { }
+  @Input() name;
+  @Input() type;
+  @Input() x;
+  @Input() y;
+  @Input() xdim;
+  @Input() ydim;
+  @Input() pos = 'down'; // left right top down
+  @Input() isHorizontal = true;
+  xunit;
+  yunit;
+  constructor() {
+    this.xunit = xunit;
+    this.yunit = yunit;
+  }
 
   ngOnInit() {
   }
