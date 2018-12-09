@@ -10,9 +10,11 @@ storiesOf('Position Marker', module).add('my position', () => ({
 }))
   .add('moving', () => ({
     component: PositionMarkerComponent,
-    props: {},
+    props: {
+      status: 'moving'
+    },
   }))
-  .add('zoom-0', () => ({
+  /**.add('zoom-0', () => ({
     component: PositionMarkerComponent,
     props: {},
   }))
@@ -23,4 +25,4 @@ storiesOf('Position Marker', module).add('my position', () => ({
   .add('zoom-2', () => ({
     component: PositionMarkerComponent,
     props: {},
-  }));
+  }))**/;
