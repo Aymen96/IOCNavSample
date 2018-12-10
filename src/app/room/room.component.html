@@ -1,5 +1,6 @@
-<div class="room" ngClass="[type]" [ngStyle]="{'width': (xdim * xunit) + '%', 'height': (ydim * yunit) + '%',
-          'left': xunit * x + '%', 'top': yunit * y + '%' }">
+<div class="room " [ngClass]="{'selected': selected}"  ngClass="[type]" [ngStyle]="{'width': (xdim * xunit) + '%', 'height': (ydim * yunit) + '%',
+          'left': xunit * x + '%', 'top': yunit * y + '%' }"
+          (click)="clickable ? toggleSelected() : ''">
   <div>
     <span class="name">{{ name }}</span>
     <span class="door {{pos}}" [ngClass]="{'horizontal': isHorizontal, 'vertical': !isHorizontal}"></span>

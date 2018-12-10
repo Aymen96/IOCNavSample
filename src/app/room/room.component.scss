@@ -3,7 +3,9 @@ $height: 80px;
 
 $bg-room: rgb(240, 243, 243);
 
+$color-selected-room: #1F6BFE;
 $color-border-room: rgb(219, 227, 229);
+
 $width-border-room: 4px;
 
 $height-door: 30%;
@@ -57,5 +59,9 @@ $width-door: 30%;
     font-weight: 900;
     padding-top: 20px; // TODO
     text-shadow: 1px 1px #ccc;
+  }
+  &.selected {
+    color: $color-selected-room;
+    border-color: $color-selected-room;
   }
 }

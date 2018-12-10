@@ -16,6 +16,8 @@ export class RoomComponent implements OnInit {
   @Input() ydim;
   @Input() pos = 'down'; // left right top down
   @Input() isHorizontal = true;
+  selected = false;
+  clickable = false;
   xunit;
   yunit;
   constructor() {
@@ -25,5 +27,11 @@ export class RoomComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  toggleSelected() {
+    const els = document.getElementsByClassName('room');
+    for (let i = 0; i < els.length; i++) {
+      els[i].classList.remove('selected');
+    }
+    this.selected = !this.selected;
+  }
 }

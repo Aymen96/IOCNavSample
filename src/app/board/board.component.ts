@@ -34,6 +34,5 @@ export class BoardComponent implements OnInit {
         (<RoomComponent>componentRef.instance)[key] = room[key];
       }
     }
-    console.log((<RoomComponent>componentRef.instance));
   }
 }

@@ -31,9 +31,22 @@ storiesOf('Room', module).add('normal', () => ({
     component: RoomComponent,
     props: {
       name: 'R500',
-      type: 'wc',
       x: 50,
       y: 50,
+    },
+  }))
+  .add('selected', () => ({
+    component: RoomComponent,
+    props: {
+      name: 'R500',
+      selected: true,
+    },
+  }))
+  .add('clickable', () => ({
+    component: RoomComponent,
+    props: {
+      name: 'R500',
+      clickable: true,
     },
   }))
   .add('horizontal down door', () => ({
