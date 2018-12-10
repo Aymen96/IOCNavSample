@@ -1,18 +1,19 @@
 $width: 160px;
 $height: 80px;
 
-$bg-room: #B1C1C9;
+$bg-room: rgb(240, 243, 243);
 
-$color-border-room: #6D8D9F;
+$color-border-room: rgb(219, 227, 229);
 $width-border-room: 4px;
 
 $height-door: 30%;
 $width-door: 30%;
 
 .room {
+  box-sizing: border-box;
   width: $width;
   height: $height;
-  border-radius: 4px;
+  border-radius: 2px;
   border: $width-border-room solid $color-border-room;
   background-color: $bg-room;
   z-index: 99;
@@ -54,5 +55,7 @@ $width-door: 30%;
   & .name {
     display:block;
     font-weight: 900;
+    padding-top: 20px; // TODO
+    text-shadow: 1px 1px #ccc;
   }
 }
