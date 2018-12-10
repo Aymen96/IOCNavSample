@@ -10,8 +10,8 @@ export class RoomComponent implements OnInit {
 
   @Input() name;
   @Input() type;
-  @Input() x;
-  @Input() y;
+  @Input() x = 0;
+  @Input() y = 0;
   @Input() xdim;
   @Input() ydim;
   @Input() pos = 'down'; // left right top down

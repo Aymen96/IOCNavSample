@@ -27,6 +27,15 @@ storiesOf('Room', module).add('normal', () => ({
       ydim: 20,
     },
   }))
+  .add('positioned', () => ({
+    component: RoomComponent,
+    props: {
+      name: 'R500',
+      type: 'wc',
+      x: 50,
+      y: 50,
+    },
+  }))
   .add('horizontal down door', () => ({
     component: RoomComponent,
     props: {

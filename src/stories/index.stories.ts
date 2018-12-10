@@ -9,8 +9,3 @@ storiesOf('Welcome', module).add('to Storybook', () => ({
   component: Welcome,
   props: {},
 }));
-
-storiesOf('Board', module).add('board', () => ({
-  component: BoardComponent,
-  props: {},
-}));

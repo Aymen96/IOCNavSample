@@ -28,12 +28,12 @@ export class BoardComponent implements OnInit {
     const viewContainerRef = this.indoorMap.viewContainerRef;
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    (<RoomComponent>componentRef.instance).name = room.name;
-    (<RoomComponent>componentRef.instance).x = room.x;
-    (<RoomComponent>componentRef.instance).y = room.y;
-    (<RoomComponent>componentRef.instance).xdim = room.xdim;
-    (<RoomComponent>componentRef.instance).ydim = room.ydim;
-    (<RoomComponent>componentRef.instance).pos = room.pos;
-    (<RoomComponent>componentRef.instance).isHorizontal = room.isHorizontal;
+    // Assign only available properties to the instance of RoomComponent
+    for (const key in room) {
+      if (room.hasOwnProperty(key)) {
+        (<RoomComponent>componentRef.instance)[key] = room[key];
+      }
+    }
+    console.log((<RoomComponent>componentRef.instance));
   }
 }
