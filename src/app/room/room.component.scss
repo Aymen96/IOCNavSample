@@ -6,18 +6,23 @@ $bg-room: #B1C1C9;
 $color-border-room: #6D8D9F;
 $width-border-room: 4px;
 
-
 $height-door: 30%;
 $width-door: 30%;
+
 .room {
   width: $width;
   height: $height;
-  position:relative;
   border-radius: 4px;
   border: $width-border-room solid $color-border-room;
   background-color: $bg-room;
   z-index: 99;
+  position:absolute;
   text-align: center;
+  & > div {
+    height: 100%;
+    width: 100%;
+    position:relative;
+  }
   & .door {
     position:absolute;
     background: white;

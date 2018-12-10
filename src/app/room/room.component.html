@@ -1,4 +1,7 @@
-<div class="room" ngClass="[type]" [ngStyle]="{'width': (xdim * xunit) + 'px', 'height': (ydim * yunit) + 'px'}">
-  <span class="name">{{ name }}</span>
-  <span class="door {{pos}}" [ngClass]="{'horizontal': isHorizontal, 'vertical': !isHorizontal}"></span>
+<div class="room" ngClass="[type]" [ngStyle]="{'width': (xdim * xunit) + '%', 'height': (ydim * yunit) + '%',
+          'left': xunit * x + '%', 'top': yunit * y + '%' }">
+  <div>
+    <span class="name">{{ name }}</span>
+    <span class="door {{pos}}" [ngClass]="{'horizontal': isHorizontal, 'vertical': !isHorizontal}"></span>
+  </div>
 </div>
