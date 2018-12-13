@@ -1,0 +1,6 @@
+<span class="beacon {{ status }}" title="{{uuid}}" (mouseenter)="hover = !hover" (mouseleave)="hover = !hover"
+      [ngStyle]="{
+          'left': xunit * x + '%', 'top': yunit * y + '%' }">
+  <i class="fab fa-bluetooth"></i>
+  <span *ngIf="hover" class="uuid-hover">{{uuid}}</span>
+</span>

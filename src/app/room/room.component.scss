@@ -4,9 +4,9 @@ $height: 80px;
 $bg-room: rgb(240, 243, 243);
 
 $color-selected-room: #1F6BFE;
-$color-border-room: rgb(219, 227, 229);
+$color-border-room: rgb(190,190,190);
 
-$width-border-room: 3px;
+$width-border-room: 2.5px;
 
 $height-door: 30%;
 $width-door: 30%;
@@ -113,6 +113,11 @@ $width-door: 30%;
     color: lightskyblue;
     padding-top: 12px;
     background: #fff;
+  }
+
+  &.inaccessible {
+    border: 0;
+    background: $color-border-room;
   }
 
   &.elevator {

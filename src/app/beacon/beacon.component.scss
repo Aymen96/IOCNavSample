@@ -1,0 +1,32 @@
+$color-beacon: #1F6BFE;
+$color-beacon-detected: #28a745;
+
+.beacon {
+
+  font-size: 16px;
+  color: $color-beacon;
+  position:absolute;
+  i {
+    z-index: 200;
+  }
+  .uuid-hover {
+    font-size: 14px;
+    border: 2px solid $color-beacon;
+    padding: 2px 6px;
+    border-radius: 4px;
+    position:absolute;
+    top: 8px;
+    left: 18px;
+    min-width: 120px;
+    text-align: center;
+    background-color: white;
+    z-index: 210;
+  }
+  &.detected {
+    color: $color-beacon-detected;
+    .uuid-hover {
+      border-color: $color-beacon-detected;
+    }
+  }
+
+}

@@ -18,7 +18,7 @@ export class IndoorMapService {
       {name: 'R102', y: 0, x: 69, xdim: 16, ydim: 20},
       {name: 'R102', y: 0, x: 85, xdim: 15, ydim: 40},
 
-      {name: 'R100', y: 40, x: 0, xdim: 30, ydim: 20},
+      {type: 'inaccessible', y: 40, x: 0, xdim: 30, ydim: 20},
       {name: 'R101', y: 40, x: 30, xdim: 20, ydim: 20},
       {name: 'R102', y: 40, x: 50, xdim: 20, ydim: 20},
 
