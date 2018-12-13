@@ -6,20 +6,20 @@ $bg-room: rgb(240, 243, 243);
 $color-selected-room: #1F6BFE;
 $color-border-room: rgb(219, 227, 229);
 
-$width-border-room: 4px;
+$width-border-room: 3px;
 
 $height-door: 30%;
 $width-door: 30%;
-
 .room {
+  position:absolute;
+}
+.room:not(.spiral-stairs) { //TODO
   box-sizing: border-box;
   width: $width;
   height: $height;
-  border-radius: 2px;
   border: $width-border-room solid $color-border-room;
   background-color: $bg-room;
   z-index: 99;
-  position:absolute;
   text-align: center;
   & > div {
     height: 100%;
@@ -59,9 +59,76 @@ $width-door: 30%;
     font-weight: 900;
     padding-top: 20px; // TODO
     text-shadow: 1px 1px #ccc;
+    z-index: 102; //TODO
   }
   &.selected {
     color: $color-selected-room;
     border-color: $color-selected-room;
   }
+  &.lecture-hall {
+    border-radius: 0 0 100% 0;
+    .door {
+      display:none; //TODO
+    }
+    .elements {
+      .rows, .prof-table {
+        position:absolute;
+        transform: rotate(-45deg);
+      }
+      .rows {
+        width: 100%;
+        display: flex;flex-direction: row;
+        justify-content: space-evenly;
+        .line {
+          background-color: $color-border-room;
+          display:inline-block;
+          height: 6px;
+          width: 30%;
+          z-index: 101;
+        }
+        &[index="1"] {top: 50%;left: 0;}
+        &[index="2"] {top: 45%;left: -5%;}
+        &[index="3"] {top: 40%;left: -10%;}
+      }
+      .prof-table {
+        width: calc(100%/ 1.42);
+        height: 10%;
+        display:block;
+        top: 25%;
+        left:-10%;
+
+        text-align: center;
+        .table {
+          display:inline-block;
+          width: 50%;
+          height: 100%;
+          background-color: $color-border-room;
+        }
+      }
+    }
+  }
+  &.wc-women, &.wc-men, &.wc-handicap{
+    border: $width-border-room solid lightskyblue;
+    font-size: 24px;
+    color: lightskyblue;
+    padding-top: 12px;
+    background: #fff;
+  }
+
+  &.elevator {
+    border: $width-border-room solid black;
+    background: #fff;
+    font-size: 24px;
+    padding-top: 12px;
+    & .elevator-icon {
+      transform: rotate(90deg);
+    }
+  }
+
+}
+
+.room.spiral-stairs .spiral-stairs-img {
+  display:block;
+  width: 100%;
+  height: 100%;
 }

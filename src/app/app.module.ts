@@ -7,6 +7,7 @@ import { RoomComponent } from './room/room.component';
 import { PositionMarkerComponent } from './position-marker/position-marker.component';
 import {IndoorMapService} from './service/indoor-map.service';
 import {IndoorMapDirective} from './indoor-map.directive';
+import { BeaconComponent } from './beacon/beacon.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import {IndoorMapDirective} from './indoor-map.directive';
     RoomComponent,
     PositionMarkerComponent,
     IndoorMapDirective,
+    BeaconComponent,
   ],
   imports: [
     BrowserModule
   ],
   providers: [IndoorMapService],
-  entryComponents: [RoomComponent],
+  entryComponents: [RoomComponent, BeaconComponent, PositionMarkerComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

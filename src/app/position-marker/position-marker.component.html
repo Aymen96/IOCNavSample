@@ -1,4 +1,8 @@
-<div class="user-marker {{status}}">
-  <div class="outer"></div>
-  <div class="inner"></div>
+
+<div class="marker" [ngStyle]="{
+            'left': xunit * x + '%', 'top': yunit * y + '%' }">
+    <div class="user-marker {{status}}" >
+      <div class="outer"></div>
+      <div class="inner"></div>
+    </div>
 </div>

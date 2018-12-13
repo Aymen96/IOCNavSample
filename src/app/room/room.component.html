@@ -1,8 +1,33 @@
-<div class="room " [ngClass]="{'selected': selected}"  ngClass="[type]" [ngStyle]="{'width': (xdim * xunit) + '%', 'height': (ydim * yunit) + '%',
+<div class="room {{type}}" [ngClass]="{'selected': selected}" [ngStyle]="{'width': (xdim * xunit) + '%', 'height': (ydim * yunit) + '%',
           'left': xunit * x + '%', 'top': yunit * y + '%' }"
           (click)="clickable ? toggleSelected() : ''">
-  <div>
+  <div class="wc" *ngIf="type && type.indexOf('wc-') === 0">
+    <span *ngIf="type && type === 'wc-women'"><i class="fas fa-female"></i></span>
+    <span *ngIf="type && type === 'wc-men'"><i class="fas fa-male"></i></span>
+    <span *ngIf="type && type === 'wc-handicap'"><i class="fas fa-wheelchair"></i></span>
+  </div>
+  <div *ngIf="!type || type.indexOf('wc-') === -1 && type !== 'elevator'">
     <span class="name">{{ name }}</span>
     <span class="door {{pos}}" [ngClass]="{'horizontal': isHorizontal, 'vertical': !isHorizontal}"></span>
+    <div class="elements "*ngIf="type && type.indexOf('lecture-hall') !== -1">
+      <div class="prof-table"><span class="table"></span></div>
+      <span class="rows" index="1">
+        <span class="line"></span>
+        <span class="line"></span>
+      </span>
+      <span class="rows" index="2">
+        <span class="line"></span>
+        <span class="line"></span>
+      </span>
+      <span class="rows" index="3">
+        <span class="line"></span>
+        <span class="line"></span>
+      </span>
+    </div>
+
   </div>
+  <div *ngIf="type && type === 'elevator'">
+    <div class="elevator-icon"><i class="fas fa-exchange-alt"></i></div>
+  </div>
+  <img *ngIf="type === 'spiral-stairs'" src="https://openclipart.org/image/2400px/svg_to_png/181425/spiral-stairs.png" class="spiral-stairs-img"/>
 </div>

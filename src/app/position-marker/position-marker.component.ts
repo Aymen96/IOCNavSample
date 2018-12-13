@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {xunit, yunit} from '../constants';
 
 @Component({
   selector: 'app-position-marker',
@@ -8,8 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PositionMarkerComponent implements OnInit {
 
   @Input() status = 'normal';
-
-  constructor() { }
+  xunit;
+  yunit;
+  constructor() {
+    this.xunit = xunit;
+    this.yunit = yunit;
+  }
 
   ngOnInit() {
   }

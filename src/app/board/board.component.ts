@@ -2,6 +2,8 @@ import {Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/c
 import {IndoorMapService} from '../service/indoor-map.service';
 import {IndoorMapDirective} from '../indoor-map.directive';
 import {RoomComponent} from '../room/room.component';
+import {BeaconComponent} from '../beacon/beacon.component';
+import {PositionMarkerComponent} from '../position-marker/position-marker.component';
 
 @Component({
   selector: 'app-board',
@@ -12,26 +14,31 @@ export class BoardComponent implements OnInit {
 
   @ViewChild(IndoorMapDirective) indoorMap: IndoorMapDirective;
   rooms;
+  beacons;
+  position;
   constructor(private indoorMapService: IndoorMapService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.rooms = this.indoorMapService.getRooms();
     this.rooms.forEach(room => {
-      this.loadComponent(room);
+      this.loadComponent(room, RoomComponent);
     });
+    this.beacons = this.indoorMapService.getBeacons();
+    this.beacons.forEach(beacon => {
+      this.loadComponent(beacon, BeaconComponent);
+    });
+    this.position = this.indoorMapService.getPosition();
+    this.loadComponent(this.position, PositionMarkerComponent);
 }
 
-  loadComponent(room) {
-
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(RoomComponent);
-
+  loadComponent(data, typ) {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(typ);
     const viewContainerRef = this.indoorMap.viewContainerRef;
-
     const componentRef = viewContainerRef.createComponent(componentFactory);
     // Assign only available properties to the instance of RoomComponent
-    for (const key in room) {
-      if (room.hasOwnProperty(key)) {
-        (<RoomComponent>componentRef.instance)[key] = room[key];
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        (<RoomComponent>componentRef.instance)[key] = data[key];
       }
     }
   }

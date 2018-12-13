@@ -10,6 +10,23 @@ storiesOf('Room', module).add('normal', () => ({
     name: 'R500',
   },
 }))
+  .add('lectureHall', () => ({
+    component: RoomComponent,
+    props: {
+      name: '',
+      type: 'lecture-hall',
+      xdim: 15,
+      ydim: 30,
+    },
+  }))
+  .add('spiral-stairs', () => ({
+    component: RoomComponent,
+    props: {
+      type: 'spiral-stairs',
+      xdim: 10,
+      ydim: 18,
+    }
+  }))
   .add('with dimentions', () => ({
     component: RoomComponent,
     props: {
@@ -81,4 +98,37 @@ storiesOf('Room', module).add('normal', () => ({
       isHorizontal: false,
       pos: 'right',
     },
+  }))
+  .add('wc women', () => ({
+    component: RoomComponent,
+    props: {
+      type: 'wc-women',
+      xdim: 3,
+      ydim: 7,
+    },
+  }))
+  .add('wc men', () => ({
+    component: RoomComponent,
+    props: {
+      type: 'wc-men',
+      xdim: 3,
+      ydim: 7,
+    },
+  }))
+  .add('wc handicap', () => ({
+    component: RoomComponent,
+    props: {
+      type: 'wc-handicap',
+      xdim: 3,
+      ydim: 7,
+    },
+  }))
+  .add('elevator', () => ({
+    component: RoomComponent,
+    props: {
+      type: 'elevator',
+      xdim: 3,
+      ydim: 7,
+    },
   }));
+
