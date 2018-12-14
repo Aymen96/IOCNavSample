@@ -1,0 +1,13 @@
+.entrance {
+  width: 20px;
+  height: 32px;
+  &.right {
+    transform: rotate(180deg);
+  }
+  &.down {
+    transform: rotate(90deg);
+  }
+  &.top {
+    transform: rotate(-90deg);
+  }
+}
