@@ -20,7 +20,7 @@ export class IndoorMapService {
 
       {type: 'inaccessible', y: 40, x: 0, xdim: 30, ydim: 20},
       {name: 'R101', y: 40, x: 30, xdim: 20, ydim: 20},
-      {name: 'R102', y: 40, x: 50, xdim: 20, ydim: 20},
+      {name: 'R102', y: 40, x: 49, xdim: 20, ydim: 20},
 
       {name: 'R100', y: 80, x: 0, xdim: 22, ydim: 20, pos: 'top'},
       {name: 'R101', y: 80, x: 22, xdim: 22, ydim: 20, pos: 'top'},
@@ -90,5 +90,11 @@ export class IndoorMapService {
 
   getPosition() {
     return {x: 90, y: 50};
+  }
+
+  getEntrances() {
+    return [
+
+    ];
   }
 }

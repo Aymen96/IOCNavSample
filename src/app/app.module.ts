@@ -8,6 +8,7 @@ import { PositionMarkerComponent } from './position-marker/position-marker.compo
 import {IndoorMapService} from './service/indoor-map.service';
 import {IndoorMapDirective} from './indoor-map.directive';
 import { BeaconComponent } from './beacon/beacon.component';
+import { EntranceComponent } from './entrance/entrance.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BeaconComponent } from './beacon/beacon.component';
     PositionMarkerComponent,
     IndoorMapDirective,
     BeaconComponent,
+    EntranceComponent,
   ],
   imports: [
     BrowserModule

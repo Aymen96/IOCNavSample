@@ -11,11 +11,55 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
-      background-color: black;
+      background: #ccc;
+      font-family: "Courier New", sans-serif;
+    }
+    .ipad {
+      background: #222;
+      width: 624px;
+      height: 364px;
+      margin: 100px auto 0;
+      position: relative;
+      border: solid #222;
+      border-width: 32px 12px;
+      border-radius: 12px;
+      box-shadow: 0px 0px 20px 5px #666;
+
+    }
+    .fas {
+      padding-top: 8px;
+    }
+    .ipad:after, .ipad:before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #3F3F3F;
+      top: -20px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 100%;
+    }
+    .ipad:before {
+      content: "☐";
+      color: #262626;
+      line-height: 20px;
+      text-align: center;
+      font-size: 10px;
+      background: #121212;
+      width: 20px;
+      height: 20px;
+      top: auto;
+      bottom: -25px;
+      border-radius: 100%;
     }
   </style>
 </head>
 <body>
-  <app-root></app-root>
+  <div class="ipad">
+    <app-root></app-root>
+  </div>
+
 </body>
 </html>
